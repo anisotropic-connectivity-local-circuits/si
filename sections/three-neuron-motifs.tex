@@ -1,0 +1,79 @@
+{\bf Three-neuron motif statistics}
+
+There are 16 %
+% %------------------------------------
+% \footnote{%
+%   There are 16 non-isomorphic simple directed graphs with 3
+%   nodes. Three of those graphs are unconnected \parencite[cf. ][%
+%   N. J. A. Sloane. The On-Line Encyclopedia of Integer Sequences,
+%   http://oeis.org. Sequence
+%   \href{http://oeis.org/A000273}{A000273}]{Davis1953}.%
+% } %
+% %-------------------------------------
+non-isomorphic 3-motifs %?? by the strict definition 1-3 are not
+                        %motifs
+in simple directed graphs. In accordance with the study of Song et
+al., the patterns were labeled 1 to 16. Assuming independence, the
+expected distribution for the random variable $X$, that maps three
+random vertices $v_1 \neq v_2 \neq v_3$ in a graph $G$ to the $n \in
+\{1,2,\dots,16\}$, labeling the isomorphism class of the full subgraph
+with vertex set $\{v_1,v_2,v_3\}$ in $G$ as above, can be obtained
+from pair connection statistics. In anisotropic networks we found that
+the probabilities of occurrence are
+\begin{align*} 
+  p_u & = 0.791336     &&\text{for unconnected pairs,}     \\
+  p_s & = 0.184151     &&\text{for pairs with a single connection and} \\
+  p_r & = 0.024513     &&\text{for reciprocally connected pairs.}
+\end{align*}
+We denote with $p_{\bar{s}} = p_s/2$ the probability to find a single
+connection from $v_1$ in $v_2$ in a vertex pair $(v_1,v_2)$. The
+probability of occurrence of the motif with label \enquote{8} is then
+the product of the probabilities of it constituents multiplied with a
+factor
+\[
+  \mathbf{P}(X=8) = 6\, p_{u} p_{s} p_{r},
+\]
+where the factor 6 is determined by the number of different
+\textit{labeled} graphs belonging to the isomorphism class. The
+distribution of $X$ for the remaining motifs is given by \\
+%
+\smallskip
+%
+\begin{minipage}{\linewidth}
+  \begin{minipage}[c]{0.32\textwidth}
+    \begin{align*}
+      \mathbf{P}(X=1) &    =   p_u^3  \\
+      \mathbf{P}(X=2) &    =   6 p_u p_u p_{\bar{s}}\\
+      \mathbf{P}(X=3) &    =   3 p_u p_u p_r\\
+      \mathbf{P}(X=4) &    =   3 p_{\bar{s}}^2 p_u\\
+      \mathbf{P}(X=5) &    =   3 p_{\bar{s}}^2 p_u\\
+    \end{align*}
+  \end{minipage}%
+  \begin{minipage}[c]{0.32\textwidth}
+    \begin{align*}
+      \mathbf{P}(X=\,\,\,6) &    =   6 p_{\bar{s}}^2 p_u\\
+      \mathbf{P}(X=\,\,\,7) &    =   6 p_{\bar{s}} p_u p_r\\
+      \mathbf{P}(X=\,\,\,9) &    =   3 p_r^2 p_u\\
+      \mathbf{P}(X=10) &   =   6 p_{\bar{s}}^3   \\
+      \mathbf{P}(X=11) &   =   2 p_{\bar{s}}^3    \\
+    \end{align*}
+  \end{minipage}%
+  \begin{minipage}[c]{0.32\textwidth}
+    \begin{align*}
+      \mathbf{P}(X=12) &   =   3 p_{\bar{s}}^2 p_r\\
+      \mathbf{P}(X=13) &   =   6 p_{\bar{s}}^2 p_r\\
+      \mathbf{P}(X=14) &   =   3 p_{\bar{s}}^2 p_r\\
+      \mathbf{P}(X=15) &   =   6 p_{\bar{s}} p_r^2\\
+      \mathbf{P}(X=16) &   =   p_r^3.\\
+    \end{align*}
+  \end{minipage}  
+\end{minipage}
+
+\textbf{Verification of the distribution}
+
+There $4^3 = 64$ possible combinations and summing up the coefficients
+for motifs 1-16 yields exactly this number. 
+
+It is
+\[\sum_{i=1}^{16} \mathbf{P}(X=i) = (p_u+2p_{\bar{s}}+p_r)^3 = 1\]
+as expected. % This is proven in research/mathematica/three_motif_distribution

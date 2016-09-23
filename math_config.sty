@@ -1,0 +1,88 @@
+\usepackage{amsmath}
+\usepackage{amsthm}       
+\usepackage{amssymb}
+
+\newcommand{\E}{\operatorname{\mathbf{E}}}
+\newcommand{\Var}{\operatorname{\mathbf{Var}}}
+
+% ------------------- Theoremstyles --------------------- %
+
+% count within "chapter" for 2.1,2.2,.. numbering
+% switch to "section" for 2.1.1, 2.1.2.. 
+% see http://tex.stackexchange.com/questions/13831
+
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{theorem}
+\newtheorem{theorem}[definition]{Theorem}           % sharing 
+\newtheorem{proposition}[definition]{Proposition}   % counter
+\newtheorem{lemma}[definition]{Lemma}               % with   
+\newtheorem{corollary}[definition]{Corollary}       % definition
+\newtheorem{algorithm}[definition]{Algorithm}
+
+
+\theoremstyle{remark}
+% \newtheorem{remark}[definition]{Remark}  % numbered remarks
+\newtheorem*{remark}{Remark}               % unnumbered remarks
+%\newtheorem{example}[definition]{Remark}
+
+% \newenvironment{example}[1][Example]{\begin{trivlist}
+%  \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+% \newenvironment{remark}[1][Remark]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+
+
+% ------------------ Theorem Spacing -------------------- %
+
+% make spacing compatible with KOMA scirpt parskip=full
+% http://tex.stackexchange.com/a/167608/4912
+\begingroup
+    \makeatletter
+    \@for\theoremstyle:=definition,remark,plain\do{%
+        \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+            \setlength\thm@preskip\parskip
+            \setlength\thm@postskip{0pt}
+            }%
+        }
+\endgroup
+
+% adjust proof environment
+% http://tex.stackexchange.com/a/59769/4912
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \vspace{-\topsep}% remove the space after the theorem
+  \pushQED{\qed}%
+  \normalfont
+  \topsep0pt \partopsep0pt % controls space before
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+  \addvspace{0pt} % controls space after
+}
+\makeatother
+
+
+% -------------- Norm || - || and Abs |-|  -------------- %
+
+% defines \norm{} and \abs to automatically resize
+% see http://tex.stackexchange.com/a/43009/4912
+\usepackage{mathtools}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
