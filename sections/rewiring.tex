@@ -1,0 +1,20 @@
+
+\subsection*{Choice of rewiring margin $\varepsilon$}
+
+The margin $\varepsilon$ of the rewiring algorithm determines the number of new targets available for a single to be rewired edge. The higher $\varepsilon$, the more targets are available (Fig.~\ref{fig:rew-ddcp-ef}A). To rewire effectively, $\varepsilon$ should be as large as possible. Similarly, the larger $\varepsilon$ the less likely it is for the algorithm to not be able to add the edge back into the graph without creating a parallel edge (Fig.~\ref{fig:rew-ddcp-ef}B). However, to maintain the relative distribution of connected targets at any given distance in the rewired graph $\varepsilon$ should be small (Fig.~\ref{fig:rew-ddcp-ef}C). In our study we chose $\varepsilon/E = 0.05$, where $E=296$ is the length of the square network area.
+
+
+% say how many edges are lost on average for epsilon=0.05
+
+\textit{Article}: The relative width of the rewiring parameter was chosen as $\varepsilon / E = 0.05$ to optimize the balance between (see SI ??).
+
+
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{%
+    /home/fh/sci/rsc/aniso_netw/pub/plos_cb_16/figures/SI_rew/SI_rew.pdf}
+  \caption{\textbf{Determining the rewiring margin $\bm{\varepsilon}$}. For three anisotropic networks ($N=1000, w=??, E= 296 (??)$), the statistics of rewiring algorithm were recorded for different rewiring margins $\varepsilon$.
+    %% the number of rewiring targets was recorded for each edge. Error bars show the average standard deviation. $E=296$ (??) is the length of the square network area in all figures.
+    \textbf{A} With increasing $\varepsilon$, the average number of available rewiring targets for a single edge increases. The number of rewiring targets was recorded for each edge. Error bars show the average standard deviation across the three networks.
+    \textbf{B} Number of edges that couldn't be rewired and are not included in the rewired network decreases with increasing rewiring margin. Error bars show the standard error of the mean.}
+  \label{fig:rew-ddcp-ef}
+\end{figure}
