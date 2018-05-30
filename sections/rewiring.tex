@@ -4,14 +4,9 @@
 The margin $\varepsilon$ of the rewiring algorithm determines the number of new targets available for a single to be rewired edge. The higher $\varepsilon$, the more targets are available (Fig.~\ref{fig:rew-ddcp-ef}A). To rewire effectively, $\varepsilon$ should be as large as possible. Similarly, for larger $\varepsilon$ it is less likely that the rewiring algorithm is not be able to add at the current edge back into the graph without creating a parallel edge (Fig.~\ref{fig:rew-ddcp-ef}B). However, to maintain the relative distribution of connected targets at any given distance in the rewired graph $\varepsilon$ should be small (Fig.~\ref{fig:rew-ddcp-ef}C). To rewire effectively while still maintaining the distance-dependent connection probability distribution, we chose $\varepsilon/E = 0.05$ as the relative rewiring margin throughout the study. Here it is $E=296$ (??) the length of the square network area.
 
 
-% say how many edges are lost on average for epsilon=0.05
-
-\textit{Article}: The relative width of the rewiring parameter was chosen as $\varepsilon / E = 0.05$ to optimize the balance between (see SI ??).
-
-
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{%
-    /home/fh/sci/rsc/aniso_netw/pub/plos_cb_16/figures/SI_rew/SI_rew.pdf}
+    /home/fh/sci/rsc/aniso_netw/pub/arxiv18/figures/SI_rew/SI_rew.pdf}
   \caption{\textbf{Determining the rewiring margin $\bm{\varepsilon}$}. For three anisotropic networks ($N=1000, w=??, E= 296 (??)$), the statistics of the rewiring algorithm were recorded for different rewiring margins $\varepsilon$.
     %% the number of rewiring targets was recorded for each edge. Error bars show the average standard deviation. $E=296$ (??) is the length of the square network area in all figures.
     \textbf{A}. With increasing $\varepsilon$, the average number of available rewiring targets for a single edge increases. The number of rewiring targets was recorded for each edge and then averaged for every graph. Error bars show the average standard deviation for the number of targets within a network.
