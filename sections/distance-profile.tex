@@ -1,6 +1,73 @@
-\subsection*{Distance-dependent connection probability}
+\subsection{Anisotropic network model}
+\label{sec:aniso_model}
 
-\begin{theorem} \label{theorem:distance_prof} Let $G_{n,w} = (G,\Phi,
+We will refer to the model as the \textit{anisotropic geometric
+  network model}. Trying to provide a simple, abstract model isolating
+anisotropy in connectivity, in most of this study the width $w(x)$ is
+assumed to be constant, $w(x) =w$, a notable exception being the
+development of tuned networks in Section~\ref{sec:tuned_networks}. In
+the graph theoretic context the anisotropic network model is a random
+graph model, in which a realization of the random process results in a
+geometric directed graph with a special mode of connectivity. We can
+formally define such realization as:
+
+\begin{definition}[Anisotropic geometric graph]
+  \label{def:anisotropic_network} 
+  Let $n \in \mathbb{N}$ and $w \in (0,\infty)$. An
+  \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
+  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$
+  vertices and the maps $\Phi:V(G)\to[0,1]^2$ and $a:V(G)\to[0,2\pi)$,
+  such that for every vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$
+  with $s(e)=v$ and $t(e)=v'$ exists if and only if the inequalities
+  for scalar products
+  \[
+    R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 
+      \quad \mathrm{and} \quad
+    \abs{R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} 
+      \leq \frac{w}{2}
+  \]
+  hold. Here $R_{\varphi}$ is the rotation matrix of angle $\varphi$
+  in the Cartesian plane and $\hat{e}_x, \hat{e}_y$ are the standard
+  unit vectors. % ?? Alpha or A??
+  % for $y=A_{\alpha(v)}(v'-v)$ the identities $y\hat{e}_x > 0$
+  % and $\abs{y \hat{e}_y} \le \frac{w}{2}$ hold.
+\end{definition}
+
+The anisotropic random graph model then is then giving the probability
+distribution over the set of anisotropic random graphs by describing a
+random process generating such graph.
+
+\begin{definition}[Anisotropic random graph model]
+  \index{anisotropic geometric!random graph model} 
+  Let $n \in \mathbb{N}$ and $w > 0$. The \textit{anisotropic random
+    graph model} $G(n,w)$ is a probability space over the set of
+  anisotropic geometric graphs with a probability distribution induced
+  by the following process: Let $G$ be an empty graph with $n$
+  vertices. Assign randomly and uniformly to every vertex $v \in V(G)$
+  a position $\Phi(v) \in [0,1]^2$ and axonal orientation $0\leq a(v)
+  < 2\pi$. Then add edges such that $(G,\Phi,a)$ is an anisotropic
+  geometric graph $G_{n,w}$.
+\end{definition}
+
+
+As with every geometric graph model introduced, we restrict the
+surface to be the unit square. This does not limit the model, as only
+the relative width of the axon band in regard to the surface's side
+length is determining connectivity statistics -- the expected number
+of connections is easily obtained by the quotient of the area covered
+by the axon and the surface area, making connectivity statistics in
+the anisotropic random graph model essentially \enquote{scale-free}.
+
+The following maybe interpreted as a study of anisotropic geometric
+graphs in the light of a neuroscientific context. To enable such an
+analysis, a few more concepts are needed. The introduction of
+those concepts composes the rest of the chapter. A first important
+step is the numerical implementation of the anisotropic network model.
+
+
+\subsection{Anisotropic network -- Distance-dependent connection probability}
+
+\begin{theorem*} \label{theorem:distance_prof} Let $G_{n,w} = (G,\Phi,
   a)$ be an anisotropic random graph. Define $C:[0,\sqrt{2}] \to
   [0,1]$ as the distance-dependent connection probability profile of
   $(G,\Phi)$, that is such that $C(x)$ is the probability that for a
@@ -15,7 +82,7 @@
              \mathrm{for} \,\, x >  w/2. %
            \end{cases}
   \]
-\end{theorem} 
+\end{theorem*} 
 
 \begin{proof}
   Let $v,v'$ be a pair of vertices in $V(G)^2 \setminus \Delta_{V(G)}$
@@ -56,7 +123,9 @@
   % 
 \end{proof}
 
+
 \vspace{0.2cm}%??
+\addtocounter{subsection}{1}
 \begin{figure}[h!] 
   \centering 
   \includegraphics[width=0.85\textwidth]{%
@@ -72,5 +141,6 @@
     geometric relation $\sin \theta = \nicefrac{w}{2x}$ leads to the
     distance-dependent connectivity profile as described in
     Theorem~\ref{theorem:distance_prof}.}
-  \label{fig:geomtr_prb}
+  \label{fig:xx_geomtr_prb}
 \end{figure}
+

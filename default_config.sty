@@ -1,9 +1,23 @@
 
 \usepackage{csquotes}
 
+\usepackage{siunitx}
 
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+
+\usepackage{hyperref}
+\hypersetup{pdftex=true, colorlinks=true, breaklinks=true,
+            linkcolor=darkblue, menucolor=darkblue,
+            pagecolor=darkblue, urlcolor=darkblue}
 
 \usepackage{graphicx}
+
 \usepackage{overpic}
 \usepackage[export]{adjustbox}
-\renewcommand{\thefigure}{S\arabic{figure}}
+
+\usepackage{chngcntr}
+\counterwithout{subsection}{section}
+
+\renewcommand{\thesubsection}{S\arabic{subsection}}
+\renewcommand{\thefigure}{S\arabic{subsection}}
