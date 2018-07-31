@@ -1,6 +1,17 @@
 \subsection{Anisotropic network model}
 \label{sec:aniso_model}
 
+The model is implemented as an adapted version of a two-dimensional
+directed random geometric graph: additionally to the random position
+on the unit square, each node is assigned a uniformly distributed axon
+projection angle $a$. For each vertex $v$, directed connections are
+then established to nodes with distance $\leq \frac{w}{2}$ to the
+projection ray originating from $v$ with angle $a$
+(Fig.~\ref{fig_model} A). This \textit{anisotropic network
+  model} is determined by two parameters; network size $N$ and the
+\enquote{axon width} $w$.
+
+
 We will refer to the model as the \textit{anisotropic geometric
   network model}. Trying to provide a simple, abstract model isolating
 anisotropy in connectivity, in most of this study the width $w(x)$ is
