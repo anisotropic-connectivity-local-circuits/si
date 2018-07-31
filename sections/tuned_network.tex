@@ -1,32 +1,44 @@
-\subsection{Tuning Distance-dependency}\label{sec:tuned_networks}
+\subsection{Tuned anisotropic networks -- formal definition}
 
-The discussion in the last section focused on the effect of anisotropy
-in connectivity on the occurrence of neuron pair motifs. Could
-distance-dependency itself, as imposed by the specific geometry, be a
-decisive factor in the distribution of edge counts in neuron pairs?
-%% \textcite{Song2005}, as well as \textcite{Perin2011}, report an
-%% overrepresentation of reciprocal connections independent from
-%% distance-dependent connectivity, opposing the observations made in the
-%% last section (\autoref{fig:two_neuron_probs} A). Furthermore, the
-%% connectivity profile in the anisotropic graph model, as identified in
-%% Section~\ref{sec:distance_connectivity}, follows purely from abstract
-%% geometry rather than being motivated by connectivity found in cortical
-%% circuits. In an attempt to rectify this and to allow for a more
-%% differentiated examination of two neuron connections, in this section
-%% we step away from simplistic geometry and \enquote{tune} the
-%% anisotropic networks to display a distance-dependent connectivity as
-%% reported by Perin et al. by adjusting the width $w(x)$ at any point
-%% $x$ along the axon's projection.
+The definition of anisotropic geometric graphs can be generalized to tuned anisotropic networks. The anisotropic graphs is then a special case where $w(x)$ is a constant function with value $w$.
 
-%% For this we introduce anisotropic networks tuned to reflect a given
-%% distance-dependent connection profile $C(x)$. We are facing the
-%% following problem: Given $C(x):[0,\sqrt{2}) \to [0,1]$, find
-%% $w:[0,\sqrt{2}) \to [0,\infty)$ such that the probability to have a
-%% connection from $v_1$ to $v_2$ for arbitrary vertices $v_1 \neq v_2$
-%% in an anisotropic graph $G(n,w)$ with distance $\mathrm{d}(v_1,v_2) =
-%% x$ is $C(x)$. The problem is in general highly complex when nothing
-%% can be assumed about $C(x)$. We find an approximate solution to the
-%% problem considering the following geometric relation:
+\begin{definition*}
+  Let $n \in \mathbb{N}$ and $w: [0,\sqrt{2}) \to [0,\infty)$. An
+  \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
+  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$
+  vertices and the maps $\Phi:V(G)\to[0,1]^2$ and $a:V(G)\to[0,2\pi)$,
+  such that for every vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$
+  with $s(e)=v$ and $t(e)=v'$ exists if and only if the inequalities
+  for scalar products
+  \[
+    R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 
+      \quad \mathrm{and} \quad
+    \abs{R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} 
+      \leq \frac{w}{2}
+  \]
+  hold. Here $R_{\varphi}$ is the rotation matrix of angle $\varphi$
+  in the Cartesian plane and $\hat{e}_x, \hat{e}_y$ are the standard
+  unit vectors. % ?? Alpha or A??
+  % for $y=A_{\alpha(v)}(v'-v)$ the identities $y\hat{e}_x > 0$
+  % and $\abs{y \hat{e}_y} \le \frac{w}{2}$ hold.
+\end{definition*}
+
+
+
+\subsection{Tuning anisotropic networks to specific distance-dependent connection probabilities}\label{sec:tuned_networks}
+
+
+Let $p(x): [0,\sqrt{2}) \to [0,1]$ be a distance-dependent connection probability on the unit square.
+  
+For this we introduce anisotropic networks tuned to reflect a given
+distance-dependent connection profile $C(x)$. We are facing the
+following problem: Given $C(x):[0,\sqrt{2}) \to [0,1]$, find
+$w:[0,\sqrt{2}) \to [0,\infty)$ such that the probability to have a
+connection from $v_1$ to $v_2$ for arbitrary vertices $v_1 \neq v_2$
+in an anisotropic graph $G(n,w)$ with distance $\mathrm{d}(v_1,v_2) =
+x$ is $C(x)$. The problem is in general highly complex when nothing
+can be assumed about $C(x)$. We find an approximate solution to the
+problem considering the following geometric relation:
 
 %% \begin{figure}[htp]
 %%   \centering
