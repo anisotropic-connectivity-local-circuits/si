@@ -1,27 +1,35 @@
 \subsection{Tuned anisotropic networks -- formal definition}
 
-The definition of anisotropic geometric graphs can be generalized to tuned anisotropic networks. The anisotropic graphs is then a special case where $w(x)$ is a constant function with value $w$.
+The definition of anisotropic geometric graphs from
+\ref{sec:aniso_model} can be generalized to tuned anisotropic networks
+where now $w$ is a function $w(x)$ of the distance $x$ to the source
+node. Anisotropic graphs are then a special case where $w(x)$ is a
+constant function with value $w$.
 
 \begin{definition*}
-  Let $n \in \mathbb{N}$ and $w: [0,\sqrt{2}) \to [0,\infty)$. An
-  \textit{anisotropic geometric graph} $G_{n,w}$ then consists of a
-  tuple $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$
+  Let $n \in \mathbb{N}$ and $w > 0$. A \textit{generalized
+    anisotropic geometric graph} $G_{n,w}$ consists of a tuple
+  $(G,\Phi,a)$, of a simple directed graph $G$ with $|V(G)|=n$
   vertices and the maps $\Phi:V(G)\to[0,1]^2$ and $a:V(G)\to[0,2\pi)$,
-  such that for every vertex pair $v,v' \in V(G)$ and edge $e\in E(G)$
-  with $s(e)=v$ and $t(e)=v'$ exists if and only if the inequalities
-  for scalar products
-  \[
-    R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x \geq 0 
-      \quad \mathrm{and} \quad
+  such that for every pair of non-identical vertices $v,v' \in V(G)$
+  an edge $e\in E(G)$ from $v$ to $v'$ exists if and only if the
+  inequalities for scalar products
+  \begin{align*}
+    R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x &\geq 0 \\
+      \mathrm{and} \quad 
     \abs{R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_y} 
-      \leq \frac{w}{2}
-  \]
+      &\leq \frac{1}{2} w\left(R_{-a(v)}\left(\Phi(v')-\Phi(v)\right)\hat{e}_x\right)
+  \end{align*}	
   hold. Here $R_{\varphi}$ is the rotation matrix of angle $\varphi$
-  in the Cartesian plane and $\hat{e}_x, \hat{e}_y$ are the standard
-  unit vectors. % ?? Alpha or A??
-  % for $y=A_{\alpha(v)}(v'-v)$ the identities $y\hat{e}_x > 0$
-  % and $\abs{y \hat{e}_y} \le \frac{w}{2}$ hold.
-\end{definition*}
+  in the Cartesian plane,
+  \[
+   R_{\varphi} =  \begin{pmatrix}
+      \cos \varphi & -\sin \varphi \\  
+      \sin \varphi & \cos \varphi \\
+    \end{pmatrix},
+  \]
+  and $\hat{e}_x = (1,0)$, $\hat{e}_y = (0,1)$ are the standard
+  unit vectors.\end{definition*}
 
 
 
