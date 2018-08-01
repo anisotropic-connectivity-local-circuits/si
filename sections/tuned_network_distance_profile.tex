@@ -42,26 +42,22 @@ Under the assumption that $C(x)<\frac{1}{2}$ for all $x \in
 %
 With the distance-dependent connection probabilities
 \begin{align}
-C(x) = -0.00142\, \left(0.00276 + x^{-0.945}\right)^{-1} + 0.23079
+  C(x) = -0.00142\, \left(0.00276 + x^{-0.945}\right)^{-1} + 0.23079
+  \label{eq:perin_c}
 \end{align}
 %
-from \textcite{Perin2011} we . However, since here $x$ was measured in
-\SI{}{\micro\meter}
-
-Here we use relation~\ref{eq:xtan} to generate anisotropic networks
-reflecting the dis\-tance-de\-pendent connectivity profile as found by
-\textcite{Perin2011}. For this we finally need to adjust the before
-arbitrarily determined side length of the network's surface. Perin et
-al.~mapped connectivity in layer 5 of the rat's somatosensory cortex
-up to a distance of $\SI{300}{\micro\meter}$. Using this reported
-distance connectivity to generate anisotropic networks via
-\ref{eq:xtan}, the chosen side length $s$ determines the networks
-overall connectivity (\autoref{fig:determine_side_length} A). We
-determine $s = \SI{296}{\micro\meter}$ to match the overall connection
-probability of $p = 0.116$ as used before and reported by Song et
-al.~(\autoref{fig:determine_side_length} B). The obtained value for
-$s$ is consistent with the slice thickness of \SI{300}{\micro\meter}
-used in Perin et al.'s experiment.
+extracted from \textcite{Perin2011} we can now use \eqref{eq:xtan} to
+obtain $w(x)$. However, Perin et al.~mapped connectivity in layer 5 of
+the rat's somatosensory cortex up to a distance of
+$\SI{300}{\micro\meter}$ and $x$ was measured in \SI{}{\micro\meter}
+in \eqref{eq:perin_c}. Thus, to obtain a reasonable connection
+density, we finally need adjust the side length of the square
+surface. We found that with a side length $E=\SI{296}{\micro\meter}$ a
+connection of density of $p=0.116$ is achieved. With this, the width
+$w(x)$ obtained from inserting \eqref{eq:perin_c} into \eqref{eq:xtan}
+generates tuned anisotropic networks with a distance-dependent
+connection probability matching the results from \cite{Perin2011}
+(Fig.~\ref{MAIN-fig:4_net_models}H).
 
 
 %% %% \begin{figure}[htp]
