@@ -1,0 +1,26 @@
+\subsection{Anisotropy degree}
+\label{sec:aniso_measure}
+
+The anisotropy degree $\lambda$ can be defined formally as follows:
+
+\begin{definition*}
+  Let $(G, \Phi, a)$ be an anisotropic geometric graph. For each
+  vertex $v$ in $G$, with non-empty set of targets $T(v)$ of $v$, the
+  anisotropy degree of $v$ is defined as
+  \[
+    \lambda(v) =       \frac{1}{\abs{T(v)}} \norm{\sum_{w \in T(v)}
+    \frac{\Phi(w)-\Phi(v)}{\norm{\Phi(w)-\Phi(v)}}},
+  \]
+  where $\abs{T(v)}$ is the number of targets of $v$ and
+  $\norm{\cdot}$ denotes the euclidean norm.
+\end{definition*}
+
+By the triangle inequality, the anisotropy degree $\lambda(v)$ takes
+values from $0$ to $1$. If targets of $v$ mostly align along a
+projection from $v$, the degree $\lambda(v)$ is close to $1$. On
+contrast, if targets are widely dispersed, $\lambda(v)$ is almost
+$0$. Note however that $\lambda(v) = 0$ does not necessarily imply
+even distribution of directions, examples for this are easily
+constructed \cite[cf.][]{Mardia2000}.
+
+
