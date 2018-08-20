@@ -1,4 +1,5 @@
 \subsection{Three-neuron motif statistics}
+\label{sec:3motif_stat}
 
 There are 16 %
 % %------------------------------------
@@ -70,11 +71,9 @@ distribution of $X$ for the remaining motifs is given by \\
   \end{minipage}  
 \end{minipage}
 
-\textbf{Verification of the distribution}
-
-There $4^3 = 64$ possible combinations and summing up the coefficients
-for motifs 1-16 yields exactly this number. 
-
-It is
-\[\sum_{i=1}^{16} \mathbf{P}(X=i) = (p_u+2p_{\bar{s}}+p_r)^3 = 1\]
-as expected. % This is proven in research/mathematica/three_motif_distribution
+There are $4^3 = 64$ possible combinations to obtain a three motif
+from unconnected, unidirectionally connected (both directions) and
+bidirectionally connected pairs. Summing up the coefficients for
+motifs 1-16 as above yields exactly this number. It is further
+\[\sum_{i=1}^{16} \mathbf{P}(X=i) = (p_u+2p_{\bar{s}}+p_r)^3 = 1,\]
+verifying the motif distribution above.
